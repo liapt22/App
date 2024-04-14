@@ -106,6 +106,7 @@
     <Content Include="assets\css\templatemo-lugx-gaming.css" />
     <Content Include="assets\images\banner-bg.jpg" />
     <Content Include="assets\images\banner-image.jpg" />
+    <Content Include="assets\images\bookify.png" />
     <Content Include="assets\images\caption-dec.png" />
     <Content Include="assets\images\categories-01.jpg" />
     <Content Include="assets\images\categories-02.jpg" />
