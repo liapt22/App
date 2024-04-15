@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "VGs+uSv3REgkDlTqzoLHagJ65MsM3JQdap5clheBcy96/mkE4CwHwSafRa3fJrBb5p1Qti8NQyys/G1sLWGQXA==",
+  "success": true,
+  "projectFilePath": "D:\\Proiect_TWEB\\Proiect_git_web_biblioteca\\App\\wweb\\Biblioteca\\eUseControl.Domain\\eUseControl.Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

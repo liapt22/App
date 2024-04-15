@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "rWqSkGDpm1rYk4dy7LCuuKaW6ZCbiFBRG6Q9yalfx6PvqSh6vCMmp4CrI6AT9DVezU5L27UckTEYa9rGpvxajA==",
+  "success": true,
+  "projectFilePath": "D:\\Proiect_TWEB\\Proiect_git_web_biblioteca\\App\\wweb\\Biblioteca\\Biblioteca.Helpers\\Biblioteca.Helpers.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512"
+  ],
+  "logs": []
+}

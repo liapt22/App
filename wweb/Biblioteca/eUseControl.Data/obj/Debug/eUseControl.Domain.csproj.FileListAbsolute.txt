@@ -1,0 +1,6 @@
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.dll
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.pdb
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.AssemblyReference.cache
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.CoreCompileInputs.cache
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.dll
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.pdb

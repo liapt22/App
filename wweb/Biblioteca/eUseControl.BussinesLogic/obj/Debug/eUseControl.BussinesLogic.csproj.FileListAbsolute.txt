@@ -1,0 +1,6 @@
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.BussinesLogic.dll
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.BussinesLogic.pdb
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.csproj.AssemblyReference.cache
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.csproj.CoreCompileInputs.cache
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.dll
+D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.pdb

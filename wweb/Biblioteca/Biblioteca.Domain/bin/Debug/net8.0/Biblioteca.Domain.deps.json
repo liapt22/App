@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Biblioteca.Domain/1.0.0": {
+        "dependencies": {
+          "Biblioteca.Helpers": "1.0.0"
+        },
+        "runtime": {
+          "Biblioteca.Domain.dll": {}
+        }
+      },
+      "Biblioteca.Helpers/1.0.0": {
+        "runtime": {
+          "Biblioteca.Helpers.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Biblioteca.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Biblioteca.Helpers/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
