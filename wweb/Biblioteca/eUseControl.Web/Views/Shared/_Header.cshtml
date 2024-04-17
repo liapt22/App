@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "_Header";
+}
+
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="index.html" class="logo">
+
+                        <img src="~/assets/images/bookify.png" alt="" style=" width: 300px;">
+
+                    </a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Acasă", "Index", "Home")</li>
+                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Contact", "Contact", "Home")</li>
+                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Detalii produs", "Product_details", "Home")</li>
+                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Magazin", "Shop", "Home")</li>
+                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Log In", "Index", "Login")</li>
+                    </ul>
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+

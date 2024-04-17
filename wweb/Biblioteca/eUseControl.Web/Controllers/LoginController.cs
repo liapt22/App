@@ -1,10 +1,14 @@
-﻿using System;
+﻿using eUseControl.BussinesLogic.Interfaces;
+using eUseControl.Data.Entities.User;
+using eUseControl.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.SessionState;
+using eUseControl.BussinesLogic;
 
 namespace eUseControl.Web.Controllers
 {
@@ -13,7 +17,7 @@ namespace eUseControl.Web.Controllers
         private readonly ISession _session;
         public LoginController()
         {
-            var bl = new BussinesLogic();
+            var bl = new BussinessLogic();
             _session = bl.GetSessionBL();
         }
 
@@ -25,17 +29,13 @@ namespace eUseControl.Web.Controllers
             return View();
         }
 
-
-
-/*
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(UserLogin login)
         {
             if (ModelState.IsValid)
             {
-                Mapper.Initialize(cfg => cfg.CreateMap<UserLogin, ULoginData>());
-                var data = Mapper.Map<ULoginData>(login);
+                var data = AutoMapper.Mapper.Map<ULoginData>(login);
 
                 data.LoginIp = Request.UserHostAddress;
                 data.LoginDateTime = DateTime.Now;
@@ -43,8 +43,8 @@ namespace eUseControl.Web.Controllers
                 var userLogin = _session.UserLogin(data);
                 if (userLogin.Status)
                 {
-                    HttpCookie cookie = _session.GenCookie(login.Credential);
-                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    //HttpCookie cookie = _session.GenCookie(login.Credential);
+                    //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
                     return RedirectToAction("Index", "Home");
                 }
@@ -56,6 +56,6 @@ namespace eUseControl.Web.Controllers
             }
 
             return View();
-        }*/
+        }
     }
     }

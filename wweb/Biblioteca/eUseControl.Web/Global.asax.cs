@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AutoMapper;
+using eUseControl.Data.Entities.User;
+using eUseControl.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +21,15 @@ namespace eUseControl.Web
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
            BundleConfig.RegisterBundles(BundleTable.Bundles);
+            InitializeAutoMapper();
+        }
+
+        protected static void InitializeAutoMapper()
+        {
+            Mapper.Initialize(cfg =>
+            {
+                cfg.CreateMap<UserLogin, ULoginData>();
+            });
         }
     }
 }
