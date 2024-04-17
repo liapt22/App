@@ -54,6 +54,8 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\UloginResp.cs" />
+    <Compile Include="Entities\User\UregisterData.cs" />
+    <Compile Include="Entities\User\UregisterResp.cs" />
     <Compile Include="Entities\User\UserMinimal.cs" />
     <Compile Include="Entities\User\UserTable.cs" />
     <Compile Include="Enums\URole.cs" />
