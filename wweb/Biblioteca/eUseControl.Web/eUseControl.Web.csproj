@@ -114,6 +114,7 @@
     <Content Include="assets\css\animate.css" />
     <Content Include="assets\css\flex-slider.css" />
     <Content Include="assets\css\fontawesome.css" />
+    <Content Include="assets\css\main.css" />
     <Content Include="assets\css\owl.css" />
     <Content Include="assets\css\templatemo-lugx-gaming.css" />
     <Content Include="assets\images\banner-bg.jpg" />
@@ -147,6 +148,7 @@
     <Content Include="assets\js\counter.js" />
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\isotope.min.js" />
+    <Content Include="assets\js\main.js" />
     <Content Include="assets\js\owl-carousel.js" />
     <Content Include="contact.html" />
     <Content Include="Content\bootstrap-grid.css" />
@@ -246,10 +248,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\UserLogin.cs" />
+    <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +306,7 @@
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Register\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

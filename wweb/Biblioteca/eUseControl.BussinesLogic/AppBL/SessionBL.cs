@@ -15,5 +15,9 @@ namespace eUseControl.BussinesLogic.AppBL
         {
             return UserLoginAction(data);
         }
+        public UregisterResp UserRegister(UregisterData data)
+        {
+            return UserRegisterAction(data);
+        }
     }
 }

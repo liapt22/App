@@ -29,6 +29,8 @@ namespace eUseControl.Web
             Mapper.Initialize(cfg =>
             {
                 cfg.CreateMap<UserLogin, ULoginData>();
+                cfg.CreateMap<UserRegister, UregisterData>();
+                cfg.CreateMap<UserTable, UserMinimal>();
             });
         }
     }
