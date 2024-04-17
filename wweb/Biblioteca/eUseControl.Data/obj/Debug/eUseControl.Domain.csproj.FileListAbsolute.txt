@@ -4,3 +4,15 @@ D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\
 D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.CoreCompileInputs.cache
 D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.dll
 D:\Proiect_TWEB\Proiect_git_web_biblioteca\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.pdb
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.dll.config
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.dll
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.pdb
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.dll
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.xml
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.AssemblyReference.cache
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseCont.610CB305.Up2Date
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.dll
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.pdb
