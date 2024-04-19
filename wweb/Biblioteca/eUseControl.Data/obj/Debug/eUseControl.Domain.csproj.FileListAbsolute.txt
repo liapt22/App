@@ -31,3 +31,6 @@ C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\obj\Deb
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.pdb
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll.config
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.pdb
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll.config

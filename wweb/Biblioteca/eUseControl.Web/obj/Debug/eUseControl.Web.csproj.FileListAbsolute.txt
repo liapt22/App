@@ -330,3 +330,6 @@ C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Web\bin\eUse
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Web\bin\eUseControl.BussinesLogic.dll.config
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Web\bin\eUseControl.Model.pdb
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Web\bin\eUseControl.Model.dll.config
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Web\bin\eUseControl.Model.dll
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Web\bin\eUseControl.Model.pdb
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Web\bin\eUseControl.Model.dll.config

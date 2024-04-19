@@ -41,3 +41,6 @@ C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.BussinesLogi
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\EntityFramework.xml
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseCont.0A20F554.Up2Date
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.dll
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.pdb
+C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.dll.config
