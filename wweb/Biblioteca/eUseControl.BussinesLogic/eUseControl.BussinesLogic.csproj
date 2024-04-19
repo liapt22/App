@@ -47,6 +47,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBL\SessionBL.cs" />
+    <Compile Include="AppBL\SessionContext.cs" />
     <Compile Include="AppBL\UserContext.cs" />
     <Compile Include="BussinessLogic.cs" />
     <Compile Include="Core\AdminApi.cs" />
@@ -71,6 +73,10 @@
     <ProjectReference Include="..\eUseControl.Data\eUseControl.Domain.csproj">
       <Project>{976B913A-213C-4853-B5FE-008740B33502}</Project>
       <Name>eUseControl.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\eUseControl.Model\eUseControl.Helpers.csproj">
+      <Project>{b75e8699-b2f2-4c35-8122-9b134fa31a67}</Project>
+      <Name>eUseControl.Helpers</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

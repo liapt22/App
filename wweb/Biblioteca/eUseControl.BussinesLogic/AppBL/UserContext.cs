@@ -10,10 +10,8 @@ namespace eUseControl.BussinesLogic.AppBL
 {
     public class UserContext: DbContext
     {
-        public UserContext() :
-  base("name=bookify")
+        public UserContext() : base("name=bookify")
         {
-
         }
 
         public virtual DbSet<UserTable> Users { get; set; }

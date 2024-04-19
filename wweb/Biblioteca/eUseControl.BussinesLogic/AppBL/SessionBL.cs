@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace eUseControl.BussinesLogic.AppBL
 {
@@ -18,6 +19,14 @@ namespace eUseControl.BussinesLogic.AppBL
         public UregisterResp UserRegister(UregisterData data)
         {
             return UserRegisterAction(data);
+        }
+        public HttpCookie GenCookie(string loginCredential)
+        {
+            return Cookie(loginCredential);
+        }
+        public UserMinimal GetUserByCookie(string apiCookieValue)
+        {
+            return UserCookie(apiCookieValue);
         }
     }
 }

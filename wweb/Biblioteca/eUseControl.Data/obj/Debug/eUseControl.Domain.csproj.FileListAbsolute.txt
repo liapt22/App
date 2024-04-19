@@ -16,3 +16,18 @@ C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseCont.610CB305.Up2Date
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.dll
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.pdb
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.dll.config
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.dll
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.pdb
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.dll
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.xml
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.AssemblyReference.cache
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.CoreCompileInputs.cache
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseCont.610CB305.Up2Date
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.dll
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.pdb
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.pdb
+C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll.config
