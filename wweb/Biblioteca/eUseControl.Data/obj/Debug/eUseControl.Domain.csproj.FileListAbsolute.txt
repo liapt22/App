@@ -34,3 +34,18 @@ C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.Data\bin\Deb
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.pdb
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Data.pdb
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.pdb
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\eUseControl.Model.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.xml
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.AssemblyReference.cache
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.CoreCompileInputs.cache
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Domain.csproj.CopyComplete
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Data\obj\Debug\eUseControl.Data.pdb

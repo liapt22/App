@@ -58,11 +58,14 @@
   <ItemGroup>
     <Compile Include="AppBL\SessionBL.cs" />
     <Compile Include="AppBL\SessionContext.cs" />
+    <Compile Include="AppBL\URegister.cs" />
     <Compile Include="AppBL\UserContext.cs" />
+    <Compile Include="AppBL\UserLogin.cs" />
     <Compile Include="BussinessLogic.cs" />
     <Compile Include="Core\AdminApi.cs" />
     <Compile Include="Core\UserApi.cs" />
     <Compile Include="Interfaces\ISession.cs" />
+    <Compile Include="Interfaces\UserLogin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

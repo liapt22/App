@@ -21,7 +21,7 @@
                             <p class="text-muted mb-4 mt-3">Don't have an account? Create your own account, it takes less than a minute</p>
                         </div>
                         @Html.ValidationSummary(true)
-                        @using (Html.BeginForm("Register", "Register", FormMethod.Post, new { @id = "RegisterForm" }))
+                        @using (Html.BeginForm("Index", "Register", FormMethod.Post, new { @class = "form-horizontal" }))
                         {
                             @Html.AntiForgeryToken()
                             <form action="/" novalidate id="RegisterForm" method="post">

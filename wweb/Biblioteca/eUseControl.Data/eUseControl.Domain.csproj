@@ -55,6 +55,7 @@
     <Compile Include="Entities\User\Session.cs" />
     <Compile Include="Entities\User\ULoginData.cs" />
     <Compile Include="Entities\User\UloginResp.cs" />
+    <Compile Include="Entities\User\URegister.cs" />
     <Compile Include="Entities\User\UregisterData.cs" />
     <Compile Include="Entities\User\UregisterResp.cs" />
     <Compile Include="Entities\User\UserMinimal.cs" />

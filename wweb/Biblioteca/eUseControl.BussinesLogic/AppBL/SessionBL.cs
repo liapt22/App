@@ -1,32 +1,30 @@
-﻿using eUseControl.BussinesLogic.Core;
-using eUseControl.BussinesLogic.Interfaces;
-using eUseControl.Data.Entities.User;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
+using eUseControl.BussinesLogic.Interfaces;
+using eUseControl.Data.Entities.User;
+using eUseControl.BussinesLogic.Core;
+using eUseControl.Domain.Entities.User;
 
-namespace eUseControl.BussinesLogic.AppBL
+
+namespace eUseControl.BussinesLogic
 {
-    public class SessionBL: UserApi, ISession
+    public class SessionBL : UserApi, ISession
     {
-        public UloginResp UserLogin(ULoginData data)
+ 
+       
+    }
+    public class RegisterBL : UserApi, IRegister
+    {
+        public void Insert_RegisterUserAction(URegister register)
         {
-            return UserLoginAction(data);
+            RegisterUserAction(register);
         }
-        public UregisterResp UserRegister(UregisterData data)
+        public void SendEmail_Register(URegister register)
         {
-            return UserRegisterAction(data);
-        }
-        public HttpCookie GenCookie(string loginCredential)
-        {
-            return Cookie(loginCredential);
-        }
-        public UserMinimal GetUserByCookie(string apiCookieValue)
-        {
-            return UserCookie(apiCookieValue);
+            SendEmail(register);
         }
     }
 }

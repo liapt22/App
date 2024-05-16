@@ -12,7 +12,7 @@
                 <div class="card">
                     <div class="card-body p-4">
                         <div class="text-center w-75 m-auto">
-                            <a href="index.html">
+                            <a href="~/Views/Home/Index.cshtml">
                                 <span><img src="~/assets/images//BOOKIFY1.png" alt="" height="22"></span>
                             </a>
                             <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
@@ -70,7 +70,7 @@
                 <div class="row mt-3">
                     <div class="col-12 text-center">
                         <p> <a href="pages-recoverpw.html" class="text-muted ml-1">Forgot your password?</a></p>
-                        <p class="text-muted">Don't have an account? <a href="/Register/Index" class="text-primary font-weight-medium ml-1">Sign Up</a></p>
+                        @Html.ActionLink("Nu aveți cont?", "Index", "Register")
                     </div>
                 </div>
             </div>

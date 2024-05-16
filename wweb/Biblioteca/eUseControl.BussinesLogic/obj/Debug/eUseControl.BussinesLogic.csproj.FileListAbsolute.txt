@@ -44,3 +44,23 @@ C:\Users\SHAKER\Desktop\SemesterProject\wweb\Biblioteca\eUseControl.BussinesLogi
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.dll
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.pdb
 C:\Users\Milana\OneDrive\Рабочий стол\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.BussinesLogic.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.BussinesLogic.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.BussinesLogic.pdb
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\AutoMapper.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\EntityFramework.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\EntityFramework.SqlServer.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Data.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Data.pdb
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Data.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.pdb
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\eUseControl.Model.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\AutoMapper.xml
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\EntityFramework.xml
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\bin\Debug\EntityFramework.SqlServer.xml
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.csproj.AssemblyReference.cache
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.csproj.CoreCompileInputs.cache
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.csproj.CopyComplete
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.BussinesLogic\obj\Debug\eUseControl.BussinesLogic.pdb

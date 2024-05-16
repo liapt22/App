@@ -1,18 +1,21 @@
-﻿using eUseControl.BussinesLogic.AppBL;
-using eUseControl.BussinesLogic.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eUseControl.BussinesLogic.AppBL;
+using eUseControl.BussinesLogic.Interfaces;
 
 namespace eUseControl.BussinesLogic
 {
-    public class BussinessLogic
+    public class BusinessLogic
     {
-        public ISession GetSessionBL()
+        public IRegister GetRegisterBL()
         {
-            return new SessionBL();
+            return new RegisterBL();
         }
+
+
     }
+
 }

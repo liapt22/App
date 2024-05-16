@@ -1,164 +1,62 @@
-﻿using AutoMapper;
-using eUseControl.BussinesLogic.AppBL;
-using eUseControl.Data.Entities.User;
-using eUseControl.Data.Enums;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
+using System.Data.SqlClient;
+using eUseControl.Data.Entities.User;
+using System.Net.Mail;
+using System.Net;
 using eUseControl.Model;
+using eUseControl.Helpers;
+using eUseControl.Domain.Entities.User;
 
 namespace eUseControl.BussinesLogic.Core
 {
     public class UserApi
     {
-        public object CookieGenerator { get; private set; }
+        string salt = HashSaltGenerate.GenerateSalt();
+        string code = HashSaltGenerate.GeneraterRandomCode();
 
-        internal UloginResp UserLoginAction(ULoginData data)
+        internal URegister RegisterUserAction(URegister register)
         {
-            UserTable result;
-            var validate = new EmailAddressAttribute();
-            if (validate.IsValid(data.Email))
+
+
+            string hashPassword = HashSaltGenerate.HashPasswordWithSalt(register.Password, salt);
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Biblioteca;Integrated Security=True";
+            string query = "INSERT INTO Users (Username, Email, Hash_Password, Salt, Code, ID_Type_user) VALUES ( @Username, @Email, @Hash_Password, @Salt, @Code, @ID_Type_user)";
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                //var pass = LoginHelper.HashGen(data.Password);
-                using (var db = new UserContext())
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    result = db.Users.FirstOrDefault(u => u.Email == data.Email && u.Password == data.Password);
+                    command.Parameters.AddWithValue("@ID_User", register.Id);
+                    command.Parameters.AddWithValue("@ID_Type_user", 1);
+                    command.Parameters.AddWithValue("@Username", register.Username);
+                    command.Parameters.AddWithValue("@Email", register.Email);
+                    command.Parameters.AddWithValue("@Hash_Password", hashPassword);
+                    command.Parameters.AddWithValue("@Salt", salt);
+                    command.Parameters.AddWithValue("@Code", code);
+                    connection.Open();
+                    command.ExecuteNonQuery();
                 }
-
-                if (result == null)
-                {
-                    return new UloginResp { Status = false, StatusMsg = "The Username or Password is Incorrect" };
-                }
-
-                using (var todo = new UserContext())
-                {
-                    result.LastIp = data.LoginIp;
-                    result.LastLogin = data.LoginDateTime;
-                    todo.Entry(result).State = EntityState.Modified;
-                    todo.SaveChanges();
-                }
-                return new UloginResp { Status = true };
             }
-            else
-                return new UloginResp { Status = false };
+            return register;
         }
-
-        internal UregisterResp UserRegisterAction(UregisterData data)
+        internal void SendEmail(URegister register)
         {
-            UserTable existingUser;
-            var validate = new EmailAddressAttribute();
-            if (validate.IsValid(data.Email))
-            {
-                using (var db = new UserContext())
-                {
-                    existingUser = db.Users.FirstOrDefault(u => u.Email == data.Email);
-                }
+            // Send email to the user
+            MailMessage mail = new MailMessage("madarableach55@gmail.com", register.Email);
+            mail.Subject = "Confirm your email";
+            mail.Body = "Your confirmation code is: " + code;
+            mail.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient();
+            smtp.UseDefaultCredentials = false;
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.Credentials = new NetworkCredential("madarableach55@gmail.com", "nhrjcgocqzznmove");//ascundeti parola
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
 
-                if (existingUser != null)
-                {
-                    return new UregisterResp { Status = false, StatusMsg = "User With Email Already Exists" };
-                }
-
-                //var pass = LoginHelper.HashGen(data.Password);
-                var newUser = new UserTable
-                {
-                    Email = data.Email,
-                    Username = data.Username,
-                    Password = data.Password,
-                    LastIp = data.LoginIp,
-                    LastLogin = data.LoginDateTime,
-                    Level = (URole)0,
-                };
-
-                using (var todo = new UserContext())
-                {
-                    todo.Users.Add(newUser);
-                    todo.SaveChanges();
-                }
-                return new UregisterResp { Status = true };
-            }
-            else
-                return new UregisterResp { Status = false };
         }
-        internal HttpCookie Cookie(string loginCredential)
-        {
-            var apiCookie = new HttpCookie("X-KEY")
-            {
-                Value = eUseControl.Model.CookieGenerator.Create(loginCredential)
-            };
-
-            using (var db = new SessionContext())
-            {
-                Session curent;
-                var validate = new EmailAddressAttribute();
-                if (validate.IsValid(loginCredential))
-                {
-                    curent = (from e in db.Sessions where e.Username == loginCredential select e).FirstOrDefault();
-                }
-                else
-                {
-                    curent = (from e in db.Sessions where e.Username == loginCredential select e).FirstOrDefault();
-                }
-
-                if (curent != null)
-                {
-                    curent.CookieString = apiCookie.Value;
-                    curent.ExpireTime = DateTime.Now.AddMinutes(1);
-                    using (var todo = new SessionContext())
-                    {
-                        todo.Entry(curent).State = EntityState.Modified;
-                        todo.SaveChanges();
-                    }
-                }
-                else
-                {
-                    db.Sessions.Add(new Session
-                    {
-                        Username = loginCredential,
-                        CookieString = apiCookie.Value,
-                        ExpireTime = DateTime.Now.AddMinutes(1)
-                    });
-                    db.SaveChanges();
-                }
-            }
-
-            return apiCookie;
-        }
-
-        internal UserMinimal UserCookie(string cookie)
-        {
-            Session session;
-            UserTable curentUser;
-
-            using (var db = new SessionContext())
-            {
-                session = db.Sessions.FirstOrDefault(s => s.CookieString == cookie && s.ExpireTime > DateTime.Now);
-            }
-
-            if (session == null) return null;
-            using (var db = new UserContext())
-            {
-                var validate = new EmailAddressAttribute();
-                if (validate.IsValid(session.Username))
-                {
-                    curentUser = db.Users.FirstOrDefault(u => u.Email == session.Username);
-                }
-                else
-                {
-                    curentUser = db.Users.FirstOrDefault(u => u.Username == session.Username);
-                }
-            }
-
-            if (curentUser == null) return null;
-            var userminimal = Mapper.Map<UserMinimal>(curentUser);
-
-            return userminimal;
-        }
-
     }
 }
