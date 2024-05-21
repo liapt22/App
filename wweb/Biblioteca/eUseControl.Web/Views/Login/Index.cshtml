@@ -12,10 +12,10 @@
                 <div class="card">
                     <div class="card-body p-4">
                         <div class="text-center w-75 m-auto">
-                            <a href="index.html">
-                                <span><img src="~/assets/images//BOOKIFY1.png" alt="" height="22"></span>
+                            <a href="/Home/Index">
+                                <span><img src="~/assets/images/bookify.png" alt="" height="50"></span>
                             </a>
-                            <p class="text-muted mb-4 mt-3">Enter your email address and password to access admin panel.</p>
+                            <p class="text-muted mb-4 mt-3">Enter your email address and password to log in.</p>
                         </div>
                         @Html.ValidationSummary(true)
                         @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @id = "LoginForm" }))

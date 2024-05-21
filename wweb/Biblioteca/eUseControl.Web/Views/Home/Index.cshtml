@@ -1,22 +1,10 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+     ViewBag.Title = "Index";
+     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+     var bestsellerBooks = ViewBag.bestsellerBooks;
+     var cheapBooks = ViewBag.cheapBooks;
 }
-
-<!-- ***** Preloader Start ***** -->
-<div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</div>
-<!-- ***** Preloader End ***** -->
-
 
 <div class="main-banner">
     <div class="container">
@@ -26,12 +14,6 @@
                     <h6>Bine ai venit pe BOOKify!</h6>
                     <h2>Explorează universul cunoștințelor!</h2>
                     <p>Într-o lume în care informația este cheia către cunoaștere și evoluție, noi vă oferim poarta către o bibliotecă vastă și diversă, accesibilă în orice moment și de oriunde. Descoperiți o experiență de neegalat în căutarea și explorarea cărților din toate domeniile și genurile, cu o colecție în continuă expansiune. </p>
-                    <div class="search-input">
-                        <form id="search" action="#">
-                            <input type="text" placeholder="Introdu un titlu" id='searchText' name="searchKeyword" onkeypress="handle" />
-                            <button role="button">Caută</button>
-                        </form>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-4 offset-lg-2">
@@ -92,161 +74,68 @@
 
 <div class="section trending">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-heading">
-                    <h6>În tendință</h6>
-                    <h2>Bestseller books</h2>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="main-button">
-                    <a href="shop.html">Vizualizează tot</a>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/128497-0.png" alt="" width="150" height="400"></a>
-                        <span class="price"><em>$30</em>$20</span>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Filosofie</span>
-                        <h4>Crimă și pedeapsă</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/81YkqyaFVEL._AC_UF1000,1000_QL80_.jpg" alt="" width="150" height="400"></a>
-                        <span class="price">$44</span>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Dezvoltare personală</span>
-                        <h4>Atomic habits</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/28489034-hosd.jpg" alt="" width="150" height="400"></a>
-                        <span class="price"><em>$64</em>$44</span>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Biografii și memorii</span>
-                        <h4>Rezervă</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/anul-1000-valerie-hansen-bg1.jpg" alt="" width="150" height="400"></a>
-                        <span class="price">$32</span>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Istorie</span>
-                        <h4>Anul 1000</h4>
-                        <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+         <div class="row">
+              <div class="col-lg-6">
+                   <div class="section-heading">
+                        <h6>În tendință</h6>
+                        <h2>Bestseller books</h2>
+                   </div>
+              </div>
+              <div class="col-lg-6">
+                   <div class="main-button">
+                        <a href="@Url.Action("Shop", "Home", new { type = "All" })">Vizualizează tot</a>
+                   </div>
+              </div>
+              @foreach (var book in bestsellerBooks)
+              {
+                   <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                             <div class="thumb">
+                                  <a href="@Url.Action("Product_details", "Home", new { name = book.Name })"><img src="@Url.Content("~/assets/images/books/" + book.Image)" alt="" width="150" height="400"></a>
+                                  <span class="price">@book.Price $</span>
+                             </div>
+                             <div class="down-content">
+                                  <span class="category">@book.Author</span>
+                                  <h4>@book.Name</h4>
+                                  <a href="@Url.Action("Product_details", "Home", new { name = book.Name })"><i class="fa fa-shopping-bag"></i></a>
+                             </div>
+                        </div>
+                   </div>
+              }
+         </div>
     </div>
 </div>
 
 <div class="section most-played">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-heading">
-                    <h6>Recomandări BOOKify</h6>
-                    <h2>Pagini apreciate</h2>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="main-button">
-                    <a href="shop.html">Vizualizează tot</a>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/442754-0.jpg" alt="" width="200" height="300"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Biografie</span>
-                        <h4>Agonie și extaz </h4>
-                        <a href="product-details.html">Răsfoiește</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/{D483AA6C-264F-4C06-AD95-9E6005E5A221}Img400.jpg" alt="" width="200" height="300"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Ficțiune</span>
-                        <h4>Portretul lui Dorian Gray</h4>
-                        <a href="product-details.html">Răsfoiește</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/429493-0.jpeg" alt="" width="200" height="300"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Carte străină</span>
-                        <h4>Odiseea</h4>
-                        <a href="product-details.html">Răsfoiește</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/hotul-de-carti_1611244806.jpg" alt="" width="200" height="300"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Ficțiune</span>
-                        <h4>Hoțul de cărți</h4>
-                        <a href="product-details.html">Răsfoiește</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/847090-0.jpeg" alt="" width="200" height="300"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">Self help</span>
-                        <h4>Manifest</h4>
-                        <a href="product-details.html">Răsfoiește</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6 col-sm-6">
-                <div class="item">
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/10569-0.jpeg" alt="" width="200" height="300"></a>
-                    </div>
-                    <div class="down-content">
-                        <span class="category">YoungAdult</span>
-                        <h4>Ugly love</h4>
-                        <a href="product-details.html">Răsfoiește</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+         <div class="row">
+              <div class="col-lg-6">
+                   <div class="section-heading">
+                        <h6>Recomandări BOOKify</h6>
+                        <h2>Cele mai mici prețuri</h2>
+                   </div>
+              </div>
+              <div class="col-lg-6">
+                   <div class="main-button">
+                        <a href="@Url.Action("Shop", "Home", new { type = "All" })">Vizualizează tot</a>
+                   </div>
+              </div>
+              @foreach (var book in cheapBooks)
+              {
+                   <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="item">
+                             <div class="thumb">
+                                  <a href="@Url.Action("Product_details", "Home", new { name = book.Name })"><img src="@Url.Content("~/assets/images/books/" + book.Image)" alt="" width="200" height="300"></a>
+                             </div>
+                             <div class="down-content">
+                                  <span class="category">@book.Author</span>
+                                  <h4>@book.Name</h4>
+                                  <a href="@Url.Action("Product_details", "Home", new { name = book.Name })">Răsfoiește</a>
+                             </div>
+                        </div>
+                   </div>
+              }
+         </div>
     </div>
 </div>
 
@@ -263,7 +152,7 @@
                 <div class="item">
                     <h4>Ficțiune</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/dream-8595132_1280.png" alt="" width="200" height="200"></a>
+                        <a href="@Url.Action("Shop", "Home", new { type = "Ficțiune" })"><img src="~/assets/images/dream-8595132_1280.png" alt="" width="200" height="200"></a>
                     </div>
                 </div>
             </div>
@@ -271,7 +160,7 @@
                 <div class="item">
                     <h4>Dezvoltare personală</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/potential-1353776_1280.jpg" alt="" width="200" height="200"></a>
+                        <a href="@Url.Action("Shop", "Home", new { type = "Dezvoltare personală" })"><img src="~/assets/images/potential-1353776_1280.jpg" alt="" width="200" height="200"></a>
                     </div>
                 </div>
             </div>
@@ -279,7 +168,7 @@
                 <div class="item">
                     <h4>Poezie</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/poetry-4359890_1280.jpg" alt="" width="200" height="200"></a>
+                        <a href="@Url.Action("Shop", "Home", new { type = "Poezie" })"><img src="~/assets/images/poetry-4359890_1280.jpg" alt="" width="200" height="200"></a>
                     </div>
                 </div>
             </div>
@@ -287,7 +176,7 @@
                 <div class="item">
                     <h4>Autori români</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/eminescu.jpg" alt="" width="200" height="200"></a>
+                        <a href="@Url.Action("Shop", "Home", new { type = "Autori români" })"><img src="~/assets/images/eminescu.jpg" alt="" width="200" height="200"></a>
                     </div>
                 </div>
             </div>
@@ -295,7 +184,7 @@
                 <div class="item">
                     <h4>Istorie</h4>
                     <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/acropolis-2725918_1280.jpg" alt="" width="200" height="200"></a>
+                        <a href="@Url.Action("Shop", "Home", new { type = "Istorie" })"><img src="~/assets/images/acropolis-2725918_1280.jpg" alt="" width="200" height="200"></a>
                     </div>
                 </div>
             </div>
@@ -303,7 +192,7 @@
     </div>
 </div>
 
-<div class="section cta">
+<div class="section">
     <div class="container">
         <div class="row">
             <div class="col-lg-5">
@@ -312,11 +201,11 @@
                         <div class="col-lg-12">
                             <div class="section-heading">
                                 <h6>Magazin nostru</h6>
-                                <h2>Comandă acum și ai parte de <em>Reduceri</em> fenomenale!</h2>
+                                <h2>Comandă acum și ai parte de <em>Experiențe</em> fenomenale!</h2>
                             </div>
                             <p>Descoperă lumea fascinantă a cărților la un click distanță - întâlnește aventura, cunoașterea și inspirația la magazinul nostru online de cărți!</p>
                             <div class="main-button">
-                                <a href="shop.html">Comandă acum</a>
+                                <a href="@Url.Action("Shop", "Home", new { type = "All" })">Comandă acum</a>
                             </div>
                         </div>
                     </div>
@@ -328,13 +217,10 @@
                         <div class="col-lg-12">
                             <div class="section-heading">
                                 <h6>NOUTĂȚI</h6>
-                                <h2>Minus 10% la orice comandă dacă te <em>Abonezi </em>!</h2>
+                                <h2>Descoperă o gamă largă de cărți <em>Captivante</em>!</h2>
                             </div>
-                            <div class="search-input">
-                                <form id="subscribe" action="#">
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Introdu email...">
-                                    <button type="submit">Abonează-te</button>
-                                </form>
+                            <div class="main-button">
+                                 <a href="@Url.Action("Shop", "Home", new { type = "All" })">Descoperă</a>
                             </div>
                         </div>
                     </div>
@@ -343,5 +229,3 @@
         </div>
     </div>
 </div>
-
-

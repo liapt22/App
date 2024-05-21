@@ -1,4 +1,5 @@
-﻿using eUseControl.Data.Entities.User;
+﻿using eUseControl.Data.Entities.Product;
+using eUseControl.Data.Entities.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,11 @@ namespace eUseControl.BussinesLogic.Interfaces
 {
     public interface ISession
     {
-        UloginResp UserLogin(ULoginData data);
-        UregisterResp UserRegister(UregisterData data);
-        HttpCookie GenCookie(string loginCredential);
+        Response UserLogin(ULoginData data);
+        Response UserRegister(UregisterData data);
+          List<UserTable> GetUsersList();
+          List<BookTable> GetBooksList();
+          HttpCookie GenCookie(string loginCredential);
         UserMinimal GetUserByCookie(string apiCookieValue);
 
     }

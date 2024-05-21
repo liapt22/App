@@ -11,60 +11,65 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using eUseControl.Model;
+using eUseControl.Data.Entities.Product;
 
 namespace eUseControl.BussinesLogic.Core
 {
     public class UserApi
     {
-        public object CookieGenerator { get; private set; }
-
-        internal UloginResp UserLoginAction(ULoginData data)
+        internal Response UserLoginAction(ULoginData data)
         {
             UserTable result;
             var validate = new EmailAddressAttribute();
             if (validate.IsValid(data.Email))
             {
-                //var pass = LoginHelper.HashGen(data.Password);
-                using (var db = new UserContext())
+                var pass = LoginHelper.HashGen(data.Password);
+                using (var db = new TableContext())
                 {
                     result = db.Users.FirstOrDefault(u => u.Email == data.Email && u.Password == data.Password);
                 }
 
                 if (result == null)
                 {
-                    return new UloginResp { Status = false, StatusMsg = "The Username or Password is Incorrect" };
+                    return new Response { Status = false, StatusMsg = "The Username or Password is Incorrect" };
                 }
 
-                using (var todo = new UserContext())
+                using (var todo = new TableContext())
                 {
                     result.LastIp = data.LoginIp;
                     result.LastLogin = data.LoginDateTime;
                     todo.Entry(result).State = EntityState.Modified;
                     todo.SaveChanges();
                 }
-                return new UloginResp { Status = true };
+                return new Response { Status = true };
             }
             else
-                return new UloginResp { Status = false };
+                return new Response { Status = false };
         }
 
-        internal UregisterResp UserRegisterAction(UregisterData data)
+        internal Response UserRegisterAction(UregisterData data)
         {
-            UserTable existingUser;
+            UserTable existingEmail;
+            UserTable existingUsername;
             var validate = new EmailAddressAttribute();
             if (validate.IsValid(data.Email))
             {
-                using (var db = new UserContext())
+                using (var db = new TableContext())
                 {
-                    existingUser = db.Users.FirstOrDefault(u => u.Email == data.Email);
+                    existingEmail = db.Users.FirstOrDefault(u => u.Email == data.Email);
+                    existingUsername = db.Users.FirstOrDefault(u => u.Username == data.Username);
                 }
 
-                if (existingUser != null)
+                if (existingEmail != null)
                 {
-                    return new UregisterResp { Status = false, StatusMsg = "User With Email Already Exists" };
+                    return new Response { Status = false, StatusMsg = "Emailul este deja înregistrat." };
+                }
+                if (existingUsername != null)
+                {
+                    return new Response { Status = false, StatusMsg = "Numele este deja înregistrat." };
                 }
 
-                //var pass = LoginHelper.HashGen(data.Password);
+                    var pass = LoginHelper.HashGen(data.Password);
                 var newUser = new UserTable
                 {
                     Email = data.Email,
@@ -75,24 +80,44 @@ namespace eUseControl.BussinesLogic.Core
                     Level = (URole)0,
                 };
 
-                using (var todo = new UserContext())
+                using (var todo = new TableContext())
                 {
                     todo.Users.Add(newUser);
                     todo.SaveChanges();
                 }
-                return new UregisterResp { Status = true };
+                return new Response { Status = true };
             }
             else
-                return new UregisterResp { Status = false };
+                return new Response { Status = false };
         }
-        internal HttpCookie Cookie(string loginCredential)
+
+          internal List<UserTable> GetUsersListAction()
+          {
+               List<UserTable> users;
+               using (var db = new TableContext())
+               {
+                    users = db.Users.ToList();
+               }
+               return users;
+          }
+
+          internal List<BookTable> GetBooksListAction()
+          {
+               List<BookTable> books;
+               using (var db = new TableContext())
+               {
+                    books = db.Books.ToList();
+               }
+               return books;
+          }
+          internal HttpCookie Cookie(string loginCredential)
         {
             var apiCookie = new HttpCookie("X-KEY")
             {
                 Value = eUseControl.Model.CookieGenerator.Create(loginCredential)
             };
 
-            using (var db = new SessionContext())
+            using (var db = new TableContext())
             {
                 Session curent;
                 var validate = new EmailAddressAttribute();
@@ -108,8 +133,8 @@ namespace eUseControl.BussinesLogic.Core
                 if (curent != null)
                 {
                     curent.CookieString = apiCookie.Value;
-                    curent.ExpireTime = DateTime.Now.AddMinutes(1);
-                    using (var todo = new SessionContext())
+                    curent.ExpireTime = DateTime.Now.AddMinutes(60);
+                    using (var todo = new TableContext())
                     {
                         todo.Entry(curent).State = EntityState.Modified;
                         todo.SaveChanges();
@@ -121,7 +146,7 @@ namespace eUseControl.BussinesLogic.Core
                     {
                         Username = loginCredential,
                         CookieString = apiCookie.Value,
-                        ExpireTime = DateTime.Now.AddMinutes(1)
+                        ExpireTime = DateTime.Now.AddMinutes(60)
                     });
                     db.SaveChanges();
                 }
@@ -135,13 +160,13 @@ namespace eUseControl.BussinesLogic.Core
             Session session;
             UserTable curentUser;
 
-            using (var db = new SessionContext())
+            using (var db = new TableContext())
             {
                 session = db.Sessions.FirstOrDefault(s => s.CookieString == cookie && s.ExpireTime > DateTime.Now);
             }
 
             if (session == null) return null;
-            using (var db = new UserContext())
+            using (var db = new TableContext())
             {
                 var validate = new EmailAddressAttribute();
                 if (validate.IsValid(session.Username))

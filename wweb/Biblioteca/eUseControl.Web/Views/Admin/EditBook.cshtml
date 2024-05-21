@@ -1,0 +1,99 @@
+﻿
+@{
+     ViewBag.Title = "EditBook";
+     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+     var book = ViewBag.book;
+     List<string> TypeList = ViewBag.TypeList;
+}
+@model eUseControl.Web.Models.EditBook
+
+<div class="page-heading header-text">
+     <h3>Adaugă Carte Nouă</h3>
+</div>
+
+<div class="contact-page section most-played">
+     <div class="container">
+          <div class="right-content">
+               <div class="row">
+                    <div class="col-lg-12">
+                         <div class="header-text">
+                              <h3 class="mb-lg-5">Editează Carte Existentă</h3>
+                         </div>
+                         @Html.ValidationSummary(true)
+                         @using (Html.BeginForm("EditBook", "Admin", FormMethod.Post, new { @id = "EditBookForm", enctype = "multipart/form-data" }))
+                         {
+                              @Html.AntiForgeryToken()
+                              <form id="contact-form" action="" method="post">
+                                   <div class="row">
+                                        <div class="col-lg-12 mb-2">
+                                             @Html.LabelFor(m => m.Name, "Nume:", new { @class = "mb-2" })
+                                             @Html.TextBoxFor(m => m.Name, new
+                                        {
+                                             placeholder = "Introdu nume...",
+                                             @class = "form-control",
+                                             required = "required",
+                                             @readonly = "readonly"
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-2">
+                                             @Html.LabelFor(m => m.Price, "Preț:", new { @class = "mb-2" })
+                                             @Html.TextBoxFor(m => m.Price, new
+                                        {
+                                             placeholder = "Introdu preț...",
+                                             @class = "form-control",
+                                             required = "required",
+                                             type = "number",
+                                             min = 1,
+                                             max = 999
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-2">
+                                             @Html.LabelFor(m => m.Description, "Descriere:", new { @class = "mb-2" })
+                                             @Html.TextBoxFor(m => m.Description, new
+                                        {
+                                             placeholder = "Introdu descriere...",
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-2">
+                                             @Html.LabelFor(m => m.Author, "Autor:", new { @class = "mb-2" })
+                                             @Html.TextBoxFor(m => m.Author, new
+                                        {
+                                             placeholder = "Introdu autor...",
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-2">
+                                             @Html.LabelFor(m => m.Edit, "Editura:", new { @class = "mb-2" })
+                                             @Html.TextBoxFor(m => m.Edit, new
+                                        {
+                                             placeholder = "Introdu editură...",
+                                             @class = "form-control",
+                                             required = "required",
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                             @Html.DropDownListFor(m => m.Type, new SelectList(ViewBag.TypeList as System.Collections.IEnumerable, "Text"), "Selectează un gen..", new
+                                        {
+                                                @class = "form-control",
+                                                required = "required",
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                             <input type="file" id="imageFile" name="imageFile" accept="image/png" class="form-control" />
+                                        </div>
+                                        <div class="col-lg-12">
+                                             <fieldset>
+                                                  <button type="submit" id="form-submit" class="orange-button">Editează Carte</button>
+                                             </fieldset>
+                                        </div>
+                                   </div>
+                              </form>
+                         }
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

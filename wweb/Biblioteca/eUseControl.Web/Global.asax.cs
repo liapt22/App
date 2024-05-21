@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using eUseControl.Data.Entities.Admin;
 using eUseControl.Data.Entities.User;
 using eUseControl.Web.Models;
 using System;
@@ -31,6 +32,12 @@ namespace eUseControl.Web
                 cfg.CreateMap<UserLogin, ULoginData>();
                 cfg.CreateMap<UserRegister, UregisterData>();
                 cfg.CreateMap<UserTable, UserMinimal>();
+
+                 cfg.CreateMap<AddUser, AddUserData>();
+                 cfg.CreateMap<AddBook, AddBookData>();
+
+                 cfg.CreateMap<EditUser, EditUserData>();
+                 cfg.CreateMap<EditBook, EditBookData>();
             });
         }
     }

@@ -37,8 +37,8 @@ namespace eUseControl.Web.Controllers
                 var userRegister = _session.UserRegister(data);
                 if (userRegister.Status)
                 {
-                    //HttpCookie cookie = _session.GenCookie(register.Email);
-                    //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    HttpCookie cookie = _session.GenCookie(register.Email);
+                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
                     return RedirectToAction("Index", "Home");
                 }

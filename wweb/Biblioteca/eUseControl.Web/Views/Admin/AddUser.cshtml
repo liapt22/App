@@ -1,0 +1,105 @@
+﻿
+@{
+     var usersList = ViewBag.usersList;
+     ViewBag.Title = "AddUser";
+     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+@model eUseControl.Web.Models.AddUser
+
+<div class="page-heading header-text">
+     <h3>Adaugă Utilizator Nou</h3>
+</div>
+
+<div class="contact-page section most-played">
+     <div class="container">
+          <div class="right-content">
+               <div class="row">
+                    <div class="col-lg-12">
+                         <div class="header-text">
+                              <h3 class="mb-lg-5">Adaugă Utilizator Nou</h3>
+                         </div>
+                         @Html.ValidationSummary(true)
+                         @using (Html.BeginForm("AddUser", "Admin", FormMethod.Post, new { @id = "AddUserForm", enctype = "multipart/form-data" }))
+                         {
+                              @Html.AntiForgeryToken()
+                              <form id="contact-form" action="" method="post">
+                                   <div class="row">
+                                        <div class="col-lg-12 mb-3">
+                                             @Html.TextBoxFor(m => m.Username, new
+                                        {
+                                             placeholder = "Introdu nume...",
+                                             @class = "form-control",
+                                             required = "required"
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                             @Html.TextBoxFor(m => m.Password, new
+                                        {
+                                             placeholder = "Introdu parola...",
+                                             @class = "form-control",
+                                             required = "required",
+                                             type = "password"
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                             @Html.TextBoxFor(m => m.Email, new
+                                        {
+                                             placeholder = "Introdu email...",
+                                             @class = "form-control",
+                                             required = "required",
+                                             type = "email"
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                             @Html.TextBoxFor(m => m.Level, new
+                                        {
+                                             placeholder = "Introdu rolul... | (0-user) | (1-moderator) | (2-admin)",
+                                             @class = "form-control",
+                                             required = "required",
+                                             min = 0,
+                                             max = 2,
+                                             type = "number"
+                                        })
+                                        </div>
+                                        <div class="col-lg-12 mb-3">
+                                             <input type="file" id="imageFile" name="imageFile" accept="image/png" class="form-control" />
+                                        </div>
+                                        <div class="col-lg-12">
+                                             <fieldset>
+                                                  <button type="submit" id="form-submit" class="orange-button">Adaugă Utilizator</button>
+                                             </fieldset>
+                                        </div>
+                                   </div>
+                              </form>
+                         }
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+
+<div class="section trending">
+     <div class="container">
+          <div class="row">
+               @foreach (var user in usersList)
+               {
+                    <div class="col-lg-3 col-md-6">
+                         <div class="item">
+                              <div class="thumb">
+                                   <img src="@Url.Content("~/assets/images/users/" + user.Image)" alt="" width="150" height="300">
+                                   <span class="price">@user.Level</span>
+                              </div>
+                              <div class="down-content">
+                                   <span class="category">@user.Email</span>
+                                   <h4>@user.Username</h4>
+                              </div>
+                              <div class="text-center mb-2">
+                                   <a href="@Url.Action("DeleteUser", "Admin", new {id = user.Id})" class="btn btn-danger">Șterge</a>
+                                   <a href="@Url.Action("EditUser", "Admin", new {id = user.Id})" class="btn btn-info">Editează</a>
+                              </div>
+                         </div>
+                    </div>
+               }
+          </div>
+     </div>
+</div>

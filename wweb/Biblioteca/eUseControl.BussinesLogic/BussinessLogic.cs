@@ -10,9 +10,14 @@ namespace eUseControl.BussinesLogic
 {
     public class BussinessLogic
     {
-        public ISession GetSessionBL()
-        {
-            return new SessionBL();
-        }
-    }
+          public ISession GetSessionBL()
+          {
+               return new SessionBL();
+          }
+
+          public IAdmin GetAdminBL()
+          {
+               return new AdminBL();
+          }
+     }
 }

@@ -12,7 +12,7 @@ using eUseControl.BussinesLogic;
 
 namespace eUseControl.Web.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
         private readonly ISession _session;
         public LoginController()
@@ -43,8 +43,8 @@ namespace eUseControl.Web.Controllers
                 var userLogin = _session.UserLogin(data);
                 if (userLogin.Status)
                 {
-                    //HttpCookie cookie = _session.GenCookie(login.Credential);
-                    //ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+                    HttpCookie cookie = _session.GenCookie(login.Email);
+                    ControllerContext.HttpContext.Response.Cookies.Add(cookie);
 
                     return RedirectToAction("Index", "Home");
                 }

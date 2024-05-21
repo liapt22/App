@@ -1,59 +1,13 @@
 ﻿
 @{
-    ViewBag.Title = "Product_details";
-    Layout = "~/Views/Home/Shared/_LayoutPage1.cshtml";
+     ViewBag.Title = "Product_details";
+     Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+     var book = ViewBag.book;
+     var booksList = ViewBag.booksList;
 }
 
-<!-- ***** Preloader Start ***** -->
-<div id="js-preloader" class="js-preloader">
-    <div class="preloader-inner">
-        <span class="dot"></span>
-        <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-</div>
-<!-- ***** Preloader End ***** -->
-<!-- ***** Header Area Start ***** -->
-<header class="header-area header-sticky">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav class="main-nav">
-                    <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
-                        <img src="~/images/logo.png" alt="" style="width: 158px;">
-                    </a>
-                    <!-- ***** Logo End ***** -->
-                    <!-- ***** Menu Start ***** -->
-                    <ul class="nav">
-                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Acasă", "Index", "Home")</li>
-                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Contact", "Contact", "Home")</li>
-                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Detalii product", "Product_details", "Home")</li>
-                        <li><i class="bx bx-chevron-right"></i> @Html.ActionLink("Magazin", "Shop", "Home")</li>
-                    </ul>
-                    <a class='menu-trigger'>
-                        <span>Menu</span>
-                    </a>
-                    <!-- ***** Menu End ***** -->
-                </nav>
-            </div>
-        </div>
-    </div>
-</header>
-<!-- ***** Header Area End ***** -->
-
 <div class="page-heading header-text">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Crimă și pedeapsă</h3>
-                <span class="breadcrumb"><a href="#">Home</a>  >  <a href="#">Shop</a>  >  Crimă și pedeapsă</span>
-            </div>
-        </div>
-    </div>
+    <h3>@book.Name</h3>
 </div>
 
 <div class="single-product section">
@@ -61,21 +15,21 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="left-image">
-                    <img src="~/assets/images/128497-0.png" alt="">
+                    <img src="@Url.Content("~/assets/images/books/" + book.Image)" alt="">
                 </div>
             </div>
             <div class="col-lg-6 align-self-center">
-                <h4>Crimă și pedeapsă</h4>
-                <span class="price"><em>$28</em> $22</span>
-                <p>"Crimă și pedeapsă" este un roman despre un student sărac, Rodion Raskolnikov, care comite o crimă pentru a-și demonstra teoria sa despre oamenii extraordinari și dreptul lor de a încălca legile. Crimele sale îl bântuie și îl confruntă cu întrebări morale, în timp ce este investigat de detectivul Porfiry Petrovich. Romanul explorează consecințele psihologice și morale ale acțiunilor noastre în căutarea sensului și al moralității.</p>
+                <h4>@book.Name</h4>
+                <span class="price">@book.Price $</span>
+                <p>"@book.Description</p>
                 <form id="qty" action="#">
-                    <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
+                    <input type="number" min="1" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
                     <button type="submit"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
                 </form>
                 <ul>
-                    <li><span>Autor:</span> <a href="#">Fyodor Dostoievsky</a>
-                    <li><span>Editură:</span> 100 clasic</li>
-                    <li><span>Gen</span> <a href="#">Ficțiune</a>, <a href="#">Psihologic</a>, <a href="#">Crimă</a></li>
+                    <li><span>Autor:</span>@book.Author</li>
+                    <li><span>Editură:</span>@book.Edit</li>
+                    <li><span>Gen</span>@book.Type</li>
 
                 </ul>
             </div>
@@ -93,23 +47,11 @@
                 <div class="tabs-content">
                     <div class="row">
                         <div class="nav-wrapper ">
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Descriere</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Recenzii (3)</button>
-                                </li>
-                            </ul>
+                             <button class="nav-link" id="description-tab" type="button">Descriere</button>
                         </div>
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
-                                <p>"Crimă și pedeapsă" este un roman clasic scris de Fyodor Dostoevsky și publicat în 1866. Este considerat unul dintre cele mai importante și influente romane din literatura rusă și mondială. Romanul explorează teme profunde precum moralitatea, justiția, alienarea socială și psihologia umană.</p>
-                                <br>
-                                <p>Povestea are ca protagonist pe Rodion Raskolnikov, un tânăr student din Sankt Petersburg care trăiește în sărăcie extremă. El își concepe o teorie în care consideră că unii oameni extraordinari, cum ar fi Napoleon, au dreptul de a încălca legile și normele morale pentru a-și atinge scopurile mari. Inspirat de această teorie, Raskolnikov planifică și comite asasinarea unei bătrâne proprietare și furtul banilor ei.</p>
-                            </div>
-                            <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
-                                <p>Coloring book air plant shabby chic, crucifix normcore raclette cred swag artisan activated charcoal. PBR&B fanny pack pok pok gentrify truffaut kitsch helvetica jean shorts edison bulb poutine next level humblebrag la croix adaptogen. <br><br>Hashtag poke literally locavore, beard marfa kogi bruh artisan succulents seitan tonx waistcoat chambray taxidermy. Same cred meggings 3 wolf moon lomo irony cray hell of bitters asymmetrical gluten-free art party raw denim chillwave tousled try-hard succulents street art.</p>
+                                <p>"@book.Description</p>
                             </div>
                         </div>
                     </div>
@@ -121,58 +63,29 @@
 
 <div class="section categories related-games">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="section-heading">
-                    <h6>Mai mult</h6>
-                    <h2>Lecturi asemămătoare</h2>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="main-button">
-                    <a href="shop.html">Vizualizează tot</a>
-                </div>
-            </div>
-            <div class="col-lg col-sm-6 col-xs-12">
-                <div class="item">
-                    <h4>Ficțiune</h4>
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/842408-0.jpeg" alt="" width="200" height="300"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-sm-6 col-xs-12">
-                <div class="item">
-                    <h4>Ficțiune</h4>
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/ae00c3594e2ea9a877e4cece61efc8d4.jpg" alt="" width="200" height="300"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-sm-6 col-xs-12">
-                <div class="item">
-                    <h4>Ficțiune</h4>
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/113413-0.jpeg"  alt="" width="200" height="300"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-sm-6 col-xs-12">
-                <div class="item">
-                    <h4>Ficțiune</h4>
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/847090-0.jpeg" alt="" width="200" height="300"></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg col-sm-6 col-xs-12">
-                <div class="item">
-                    <h4>Istorie</h4>
-                    <div class="thumb">
-                        <a href="product-details.html"><img src="~/assets/images/106893-0.png"  alt="" width="200" height="300"></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+         <div class="row">
+              <div class="col-lg-6">
+                   <div class="section-heading">
+                        <h6>Mai mult</h6>
+                        <h2>Lecturi asemămătoare</h2>
+                   </div>
+              </div>
+              <div class="col-lg-6">
+                   <div class="main-button">
+                        <a href="@Url.Action("Shop", "Home", new { type = book.Type })">Vizualizează tot</a>
+                   </div>
+              </div>
+              @foreach (var similarBook in booksList)
+              {
+                   <div class="col-lg col-sm-6 col-xs-12">
+                        <div class="item">
+                             <h4>@similarBook.Name</h4>
+                             <div class="thumb">
+                                  <a href="@Url.Action("Product_details", "Home", new { name = similarBook.Name })"><img src="@Url.Content("~/assets/images/books/" + similarBook.Image)" alt="" width="200" height="300"></a>
+                             </div>
+                        </div>
+                   </div>
+              }
+         </div>
     </div>
 </div>

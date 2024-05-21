@@ -1,5 +1,6 @@
 ﻿using eUseControl.BussinesLogic.Core;
 using eUseControl.BussinesLogic.Interfaces;
+using eUseControl.Data.Entities.Product;
 using eUseControl.Data.Entities.User;
 using System;
 using System.Collections.Generic;
@@ -12,15 +13,23 @@ namespace eUseControl.BussinesLogic.AppBL
 {
     public class SessionBL: UserApi, ISession
     {
-        public UloginResp UserLogin(ULoginData data)
+        public Response UserLogin(ULoginData data)
         {
             return UserLoginAction(data);
         }
-        public UregisterResp UserRegister(UregisterData data)
+        public Response UserRegister(UregisterData data)
         {
             return UserRegisterAction(data);
         }
-        public HttpCookie GenCookie(string loginCredential)
+          public List<UserTable> GetUsersList()
+          {
+               return GetUsersListAction();
+          }
+          public List<BookTable> GetBooksList()
+          {
+               return GetBooksListAction();
+          }
+          public HttpCookie GenCookie(string loginCredential)
         {
             return Cookie(loginCredential);
         }
