@@ -10,3 +10,15 @@ C:\Users\Milana\OneDrive\Рабочий стол\proiect\App-master\wweb\Bibliot
 C:\Users\Milana\OneDrive\Рабочий стол\proiect\App-master\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseCont.031189D9.Up2Date
 C:\Users\Milana\OneDrive\Рабочий стол\proiect\App-master\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseControl.Model.dll
 C:\Users\Milana\OneDrive\Рабочий стол\proiect\App-master\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseControl.Model.pdb
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\bin\Debug\eUseControl.Model.dll.config
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\bin\Debug\eUseControl.Model.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\bin\Debug\eUseControl.Model.pdb
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\bin\Debug\EntityFramework.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\bin\Debug\EntityFramework.xml
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseControl.Helpers.csproj.AssemblyReference.cache
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseControl.Helpers.csproj.CoreCompileInputs.cache
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseControl.Helpers.csproj.CopyComplete
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseControl.Model.dll
+D:\proiectsemestru4\App\wweb\Biblioteca\eUseControl.Model\obj\Debug\eUseControl.Model.pdb
